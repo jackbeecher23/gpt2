@@ -146,7 +146,7 @@ for step in range(max_steps):
 
     t0 = time.time()
 
-    if step % eval_interval == 0:
+    if step % eval_interval == 0 or laststep:
         model.eval()
         val_loader.reset()
         with torch.no_grad():
@@ -167,7 +167,7 @@ for step in range(max_steps):
                 f.write(f"{step} val {val_loss_accum.item():.4f}\n")
             print(f"validation loss: {val_loss_accum.item():.4f}")
 
-            if step > 0 and (step % 5000 == 0 or laststep):
+            if step > 0 and (step % (eval_interval * 10) == 0 or laststep):
                 checkpoint_path = os.path.join(log_dir, f"model_{step:05d}.pt")
                 checkpoint = {
                     'model': raw_model.state_dict(),
