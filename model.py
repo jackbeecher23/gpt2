@@ -1,9 +1,14 @@
+"""
+Model that mirrors GPT2 Architecture
+"""
+
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
 import inspect
 from dataclasses import dataclass
 
+# ----------------------------------------------------
 
 class CausalSelfAttention(nn.Module):
     def __init__(self, config):
