@@ -1,3 +1,8 @@
+"""
+Loads the fineweb-edu data set from HuggingFace into the 
+edu_fineweb10B directory after tokenizing
+"""
+
 import multiprocessing as mp
 from tqdm import tqdm
 from datasets import load_dataset

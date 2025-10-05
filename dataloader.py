@@ -1,3 +1,7 @@
+"""
+Loads data from fineweb10B shards that are in the edu_fineweb10B directory
+"""
+
 import numpy as np
 import torch
 import os
