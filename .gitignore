@@ -1,4 +1,4 @@
-./deploy.sh
+deploy.sh
 edu_fineweb10B/*
 data/tinyshakespeare.txt
 log/*
